@@ -31,7 +31,7 @@ export const AmenityList = () => {
   });
 
   return (
-    <List>
+    <List title="Amenity">
       <Table {...tableProps} rowKey="id">
         <Table.Column dataIndex="id" title="ID" />
         <Table.Column dataIndex="name" title="name" />
