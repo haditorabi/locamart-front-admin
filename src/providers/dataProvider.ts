@@ -14,7 +14,6 @@ const dataProvider = createDataProvider(client, {
   getList: {
     dataMapper: (response: OperationResult<any>, params: GetListParams) => {
       const operationName = `${camelCase("all_" + params.resource)}`;
-      console.log(response.data?.[operationName]);
       return response.data?.[operationName].items;
     },
     getTotalCount: (response: OperationResult<any>, params: GetListParams) => {
