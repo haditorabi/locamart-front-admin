@@ -18,5 +18,6 @@ export const resources = [
     show: "/amenity/show/:id",
     edit: "/amenity/edit/:id",
     create: "/amenity/create",
+    meta: { label: "Amenity" },
   },
 ];
