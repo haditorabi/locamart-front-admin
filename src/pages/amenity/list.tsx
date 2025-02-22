@@ -5,17 +5,13 @@ import {
   DateField,
   getDefaultSortOrder,
   DeleteButton,
+  ShowButton,
 } from "@refinedev/antd";
-
 import { Space, Table } from "antd";
-
-import { AMENITY_LIST_QUERY } from "./queries";
-// import type { CategoriesListQuery, GetFieldsFromList } from "graphql/types";
-
-// type ICategory = GetFieldsFromList<CategoriesListQuery>;
-
+import { AMENITY_DELETE_QUERY, AMENITY_LIST_QUERY } from "./queries";
 export const AmenityList = () => {
   const { tableProps, sorters } = useTable<any>({
+    initialPageSize: 5,
     initialSorter: [
       {
         field: "id",
@@ -51,8 +47,14 @@ export const AmenityList = () => {
           dataIndex="actions"
           render={(_, record) => (
             <Space>
-              <EditButton size="small" hideText recordItemId={record.id} />
-              <DeleteButton hideText size="small" recordItemId={record.id} />
+              <EditButton hideText size="small" recordItemId={record.id} />
+              <ShowButton hideText size="small" recordItemId={record.id} />
+              <DeleteButton
+                hideText
+                size="small"
+                meta={{ gqlMutation: AMENITY_DELETE_QUERY }}
+                recordItemId={record.id}
+              />
             </Space>
           )}
         />
