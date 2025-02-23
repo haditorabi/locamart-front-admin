@@ -1,33 +1,44 @@
-import { Create, useForm } from "@refinedev/antd";
-
-import { Form, Input } from "antd";
-
-import type { GetFields } from "graphql/types";
+import { Create } from "@refinedev/chakra-ui";
+import {
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Input,
+  Select,
+} from "@chakra-ui/react";
+import { useSelect } from "@refinedev/core";
+import { useForm } from "@refinedev/react-hook-form";
 import { AMENITY_CREATE_MUTATION } from "./queries";
-import { CreateAmenityInput } from "graphql/schema.types";
 
 export const AmenityCreate = () => {
-  const { formProps, saveButtonProps } = useForm<GetFields<CreateAmenityInput>>(
-    {
-      meta: { gqlMutation: AMENITY_CREATE_MUTATION },
-    }
-  );
+  const {
+    refineCore: { formLoading },
+    saveButtonProps,
+    register,
+    formState: { errors },
+  } = useForm<any>({
+    refineCoreProps: {
+      metaData: {
+        gqlMutation: AMENITY_CREATE_MUTATION,
+      },
+    },
+  });
+
+  const { options } = useSelect({
+    resource: "categories",
+  });
 
   return (
-    <Create saveButtonProps={saveButtonProps}>
-      <Form {...formProps} layout="vertical">
-        <Form.Item
-          label="Name"
-          name="name"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-      </Form>
+    <Create isLoading={formLoading} saveButtonProps={saveButtonProps}>
+      <FormControl mb="3" isInvalid={!!errors?.title}>
+        <FormLabel>Name</FormLabel>
+        <Input
+          id="name"
+          type="text"
+          {...register("name", { required: "name is required" })}
+        />
+        <FormErrorMessage>{`${errors.name?.message}`}</FormErrorMessage>
+      </FormControl>
     </Create>
   );
 };

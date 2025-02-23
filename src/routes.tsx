@@ -1,19 +1,13 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router";
-import { ThemedLayoutV2, AuthPage } from "@refinedev/antd";
+import { Routes, Route, Outlet } from "react-router";
 import {
   AmenityList,
   AmenityShow,
   AmenityEdit,
   AmenityCreate,
 } from "./pages/amenity";
-import { Authenticated, ErrorComponent } from "@refinedev/core";
-import routerProvider, {
-  NavigateToResource,
-  UnsavedChangesNotifier,
-  DocumentTitleHandler,
-  CatchAllNavigate,
-} from "@refinedev/react-router";
-import { Login } from "./pages/login";
+import { ErrorComponent, ThemedLayoutV2, AuthPage } from "@refinedev/chakra-ui";
+import { Authenticated } from "@refinedev/core";
+import { NavigateToResource, CatchAllNavigate } from "@refinedev/react-router";
 const authCredentials = {
   email: "1234@gmail.com",
   password: "test@1234",
@@ -58,7 +52,7 @@ export const AppRoutes = (
             forgotPasswordLink={false}
             renderContent={(content) => <>{content}</>}
             formProps={{
-              initialValues: {
+              defaultValues: {
                 ...authCredentials,
               },
             }}

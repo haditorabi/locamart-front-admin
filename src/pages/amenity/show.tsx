@@ -1,47 +1,35 @@
-import { useShow } from "@refinedev/core";
-import { Show, MarkdownField, RefreshButton, DateField } from "@refinedev/antd";
+import { useShow, useOne } from "@refinedev/core";
+import { Show, MarkdownField, DateField } from "@refinedev/chakra-ui";
 
-import { Typography } from "antd";
-
+import { Heading, Text, Spacer } from "@chakra-ui/react";
 import { AMENITY_SHOW_QUERY } from "./queries";
 
-import type { GetFields } from "graphql/types";
-
-const { Title, Text } = Typography;
-
-export const AmenityShow = () => {
-  const { query: queryResult } = useShow<GetFields<any>>({
-    metaData: {
+export const AmenityShow: React.FC = () => {
+  const { query: queryResult } = useShow<any>({
+    meta: {
       gqlQuery: AMENITY_SHOW_QUERY,
     },
   });
-
   const { data, isLoading } = queryResult;
   const record = data?.data;
+
   return (
-    <Show
-      isLoading={isLoading}
-      headerProps={{
-        extra: (
-          <RefreshButton
-            onClick={() => {
-              queryResult.refetch();
-            }}
-          />
-        ),
-      }}
-    >
-      <Title level={5}>Id</Title>
-      <Text>{record?.id}</Text>
+    <Show isLoading={isLoading}>
+      <Heading as="h5" size="sm">
+        Id
+      </Heading>
+      <Text mt={2}>{record?.id}</Text>
 
-      <Title level={5}>Name</Title>
-      <Text>{record?.name}</Text>
+      <Heading as="h5" size="sm" mt={4}>
+        Name
+      </Heading>
+      <Text mt={2}>{record?.name}</Text>
 
-      <Title level={5}>CreatedAt</Title>
+      <Heading as="h5" size="sm" mt={4}>
+        Created At
+      </Heading>
+      <Spacer mt={2} />
       <DateField value={record?.createdAt} />
-
-      <Title level={5}>MediaId</Title>
-      <Text>{record?.mediaId}</Text>
     </Show>
   );
 };
