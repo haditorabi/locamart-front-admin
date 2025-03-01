@@ -29,14 +29,14 @@ export const AmenityEdit = () => {
 
   return (
     <Edit isLoading={formLoading} saveButtonProps={saveButtonProps}>
-      <FormControl mb="3" isInvalid={!!errors?.title}>
-        <FormLabel>Title</FormLabel>
+      <FormControl mb="3" isInvalid={!!errors?.name}>
+        <FormLabel>Name</FormLabel>
         <Input
           id="name"
           type="text"
           {...register("name", { required: "name is required" })}
         />
-        <FormErrorMessage>{`${errors.title?.message}`}</FormErrorMessage>
+        <FormErrorMessage>{`${errors.name?.message}`}</FormErrorMessage>
       </FormControl>
     </Edit>
   );

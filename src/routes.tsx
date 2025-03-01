@@ -1,10 +1,14 @@
-import { Routes, Route, Outlet } from "react-router";
+import { Routes, Route, Outlet, Navigate } from "react-router";
 import {
   AmenityList,
   AmenityShow,
   AmenityEdit,
   AmenityCreate,
-} from "./pages/amenity";
+  BookingTimeSlotCreate,
+  BookingTimeSlotEdit,
+  BookingTimeSlotList,
+  BookingTimeSlotShow,
+} from "./pages";
 import { ErrorComponent, ThemedLayoutV2, AuthPage } from "@refinedev/chakra-ui";
 import { Authenticated } from "@refinedev/core";
 import { NavigateToResource, CatchAllNavigate } from "@refinedev/react-router";
@@ -27,12 +31,19 @@ export const AppRoutes = (
         </Authenticated>
       }
     >
-      {/* <Route index element={<DashboardPage />} /> */}
+      <Route path="/" element={<Navigate to="/amenity" replace />} />
+
       <Route path="/amenity">
         <Route index element={<AmenityList />} />
         <Route path="show/:id" element={<AmenityShow />} />
         <Route path="edit/:id" element={<AmenityEdit />} />
         <Route path="create" element={<AmenityCreate />} />
+      </Route>
+      <Route path="/bookingTimeSlot">
+        <Route index element={<BookingTimeSlotList />} />
+        <Route path="show/:id" element={<BookingTimeSlotShow />} />
+        <Route path="edit/:id" element={<BookingTimeSlotEdit />} />
+        <Route path="create" element={<BookingTimeSlotCreate />} />
       </Route>
     </Route>
 
