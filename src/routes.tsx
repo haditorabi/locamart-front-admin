@@ -4,10 +4,14 @@ import {
   AmenityShow,
   AmenityEdit,
   AmenityCreate,
-  BookingTimeSlotCreate,
-  BookingTimeSlotEdit,
   BookingTimeSlotList,
   BookingTimeSlotShow,
+  BookingTimeSlotEdit,
+  BookingTimeSlotCreate,
+  BusinessList,
+  BusinessShow,
+  BusinessEdit,
+  BusinessCreate,
 } from "./pages";
 import { ErrorComponent, ThemedLayoutV2, AuthPage } from "@refinedev/chakra-ui";
 import { Authenticated } from "@refinedev/core";
@@ -44,6 +48,13 @@ export const AppRoutes = (
         <Route path="show/:id" element={<BookingTimeSlotShow />} />
         <Route path="edit/:id" element={<BookingTimeSlotEdit />} />
         <Route path="create" element={<BookingTimeSlotCreate />} />
+      </Route>
+      <Route path="/business">
+        <Route index element={<BusinessList />} />
+        <Route path="show/:id" element={<BusinessShow />} />
+        <Route path="edit/:id" element={<BusinessEdit />} />
+
+        <Route path="create" element={<BusinessCreate />} />
       </Route>
     </Route>
 

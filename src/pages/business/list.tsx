@@ -1,7 +1,4 @@
-import {
-  BOOKINGTIMESLOT_DELETE_QUERY,
-  BOOKINGTIMESLOT_LIST_QUERY,
-} from "./queries";
+import { BUSINESS_DELETE_QUERY, BUSINESS_LIST_QUERY } from "./queries";
 import React from "react";
 import { useTable } from "@refinedev/react-table";
 import { type ColumnDef, flexRender } from "@tanstack/react-table";
@@ -30,7 +27,7 @@ import {
 import { ColumnFilter, ColumnSorter } from "../../components/table";
 import { Pagination } from "../../components/pagination";
 
-export const BookingTimeSlotList: React.FC = () => {
+export const BusinessList: React.FC = () => {
   const columns = React.useMemo<ColumnDef<any>[]>(
     () => [
       {
@@ -48,14 +45,20 @@ export const BookingTimeSlotList: React.FC = () => {
         },
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
-        cell: function render({ getValue }) {
-          return <DateField value={getValue() as string} format="LLL" />;
+        id: "isClaimed",
+        header: "isClaimed",
+        accessorKey: "isClaimed",
+        cell: ({ getValue }) => {
+          const value = getValue() as boolean;
+          return value ? "✅" : "❌";
         },
-        enableColumnFilter: false,
       },
+      {
+        id: "status",
+        header: "Status",
+        accessorKey: "status",
+      },
+
       {
         id: "actions",
         header: "Actions",
@@ -66,7 +69,7 @@ export const BookingTimeSlotList: React.FC = () => {
           return (
             <HStack>
               <ShowButton
-                resource="bookingTimeSlot"
+                resource="Business"
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
@@ -80,7 +83,7 @@ export const BookingTimeSlotList: React.FC = () => {
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
-                meta={{ gqlMutation: BOOKINGTIMESLOT_DELETE_QUERY }}
+                meta={{ gqlMutation: BUSINESS_DELETE_QUERY }}
               />
             </HStack>
           );
@@ -110,7 +113,7 @@ export const BookingTimeSlotList: React.FC = () => {
         },
       ],
       meta: {
-        gqlQuery: BOOKINGTIMESLOT_LIST_QUERY,
+        gqlQuery: BUSINESS_LIST_QUERY,
       },
     },
   });
@@ -123,7 +126,7 @@ export const BookingTimeSlotList: React.FC = () => {
   }));
 
   return (
-    <List title="Booking Time Slot">
+    <List title="Business">
       <TableContainer>
         <Table variant="simple" whiteSpace="pre-line">
           <Thead>

@@ -15,4 +15,12 @@ export const resources = [
     create: "/BookingTimeSlot/create",
     meta: { label: "Booking Time Slot" },
   },
+  {
+    name: "Business",
+    list: "/Business",
+    show: "/Business/show/:id",
+    edit: "/Business/edit/:id",
+    create: "/Business/create",
+    meta: { label: "Business" },
+  },
 ];
