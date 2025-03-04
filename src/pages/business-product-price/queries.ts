@@ -4,10 +4,12 @@ export const BUSINESSPRODUCTPRICE_LIST_QUERY = gql`
   query BusinessProductPrice($limit: Int, $page: Int) {
     allBusinessProductPrice(limit: $limit, page: $page) {
       items {
+        businessProductId
         createdAt
+        currencyId
         id
-        mediaId
-        name
+        price
+        updatedAt
       }
       totalCount
     }
@@ -16,20 +18,24 @@ export const BUSINESSPRODUCTPRICE_LIST_QUERY = gql`
 export const BUSINESSPRODUCTPRICE_SHOW_QUERY = gql`
   query BusinessProductPrice($id: String!) {
     businessProductPrice(id: $id) {
-      id
-      name
-      mediaId
+      businessProductId
       createdAt
+      currencyId
+      id
+      price
+      updatedAt
     }
   }
 `;
 export const BUSINESSPRODUCTPRICE_DELETE_QUERY = gql`
   mutation BusinessProductPrice($id: String!) {
     deleteBusinessProductPrice(id: $id) {
-      id
-      name
-      mediaId
+      businessProductId
       createdAt
+      currencyId
+      id
+      price
+      updatedAt
     }
   }
 `;
@@ -39,20 +45,24 @@ export const BUSINESSPRODUCTPRICE_EDIT_MUTATION = gql`
     $data: UpdateBusinessProductPriceInput!
   ) {
     updateBusinessProductPrice(id: $id, data: $data) {
-      id
-      name
-      mediaId
+      businessProductId
       createdAt
+      currencyId
+      id
+      price
+      updatedAt
     }
   }
 `;
 export const BUSINESSPRODUCTPRICE_CREATE_MUTATION = gql`
   mutation BusinessProductPrice($data: CreateBusinessProductPriceInput!) {
     createBusinessProductPrice(data: $data) {
-      id
-      name
-      mediaId
+      businessProductId
       createdAt
+      currencyId
+      id
+      price
+      updatedAt
     }
   }
 `;

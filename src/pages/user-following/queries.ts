@@ -5,9 +5,9 @@ export const USERFOLLOWING_LIST_QUERY = gql`
     allUserFollowing(limit: $limit, page: $page) {
       items {
         createdAt
+        followeeId
+        followerId
         id
-        mediaId
-        name
       }
       totalCount
     }
@@ -16,40 +16,40 @@ export const USERFOLLOWING_LIST_QUERY = gql`
 export const USERFOLLOWING_SHOW_QUERY = gql`
   query UserFollowing($id: String!) {
     userFollowing(id: $id) {
-      id
-      name
-      mediaId
       createdAt
+      followeeId
+      followerId
+      id
     }
   }
 `;
 export const USERFOLLOWING_DELETE_QUERY = gql`
   mutation UserFollowing($id: String!) {
     deleteUserFollowing(id: $id) {
-      id
-      name
-      mediaId
       createdAt
+      followeeId
+      followerId
+      id
     }
   }
 `;
 export const USERFOLLOWING_EDIT_MUTATION = gql`
   mutation UserFollowing($id: String!, $data: UpdateUserFollowingInput!) {
     updateUserFollowing(id: $id, data: $data) {
-      id
-      name
-      mediaId
       createdAt
+      followeeId
+      followerId
+      id
     }
   }
 `;
 export const USERFOLLOWING_CREATE_MUTATION = gql`
   mutation UserFollowing($data: CreateUserFollowingInput!) {
     createUserFollowing(data: $data) {
-      id
-      name
-      mediaId
       createdAt
+      followeeId
+      followerId
+      id
     }
   }
 `;

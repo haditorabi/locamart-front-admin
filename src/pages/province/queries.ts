@@ -4,10 +4,9 @@ export const PROVINCE_LIST_QUERY = gql`
   query Province($limit: Int, $page: Int) {
     allProvince(limit: $limit, page: $page) {
       items {
-        createdAt
         id
-        mediaId
         name
+        status
       }
       totalCount
     }
@@ -18,8 +17,7 @@ export const PROVINCE_SHOW_QUERY = gql`
     province(id: $id) {
       id
       name
-      mediaId
-      createdAt
+      status
     }
   }
 `;
@@ -28,8 +26,7 @@ export const PROVINCE_DELETE_QUERY = gql`
     deleteProvince(id: $id) {
       id
       name
-      mediaId
-      createdAt
+      status
     }
   }
 `;
@@ -38,8 +35,7 @@ export const PROVINCE_EDIT_MUTATION = gql`
     updateProvince(id: $id, data: $data) {
       id
       name
-      mediaId
-      createdAt
+      status
     }
   }
 `;
@@ -48,8 +44,7 @@ export const PROVINCE_CREATE_MUTATION = gql`
     createProvince(data: $data) {
       id
       name
-      mediaId
-      createdAt
+      status
     }
   }
 `;

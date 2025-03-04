@@ -5,9 +5,12 @@ export const PAYMENTMETHOD_LIST_QUERY = gql`
     allPaymentMethod(limit: $limit, page: $page) {
       items {
         createdAt
+        details
         id
-        mediaId
-        name
+        paymentId
+        status
+        type
+        userId
       }
       totalCount
     }
@@ -16,40 +19,52 @@ export const PAYMENTMETHOD_LIST_QUERY = gql`
 export const PAYMENTMETHOD_SHOW_QUERY = gql`
   query PaymentMethod($id: String!) {
     paymentMethod(id: $id) {
-      id
-      name
-      mediaId
       createdAt
+      details
+      id
+      paymentId
+      status
+      type
+      userId
     }
   }
 `;
 export const PAYMENTMETHOD_DELETE_QUERY = gql`
   mutation PaymentMethod($id: String!) {
     deletePaymentMethod(id: $id) {
-      id
-      name
-      mediaId
       createdAt
+      details
+      id
+      paymentId
+      status
+      type
+      userId
     }
   }
 `;
 export const PAYMENTMETHOD_EDIT_MUTATION = gql`
   mutation PaymentMethod($id: String!, $data: UpdatePaymentMethodInput!) {
     updatePaymentMethod(id: $id, data: $data) {
-      id
-      name
-      mediaId
       createdAt
+      details
+      id
+      paymentId
+      status
+      type
+      userId
     }
   }
 `;
 export const PAYMENTMETHOD_CREATE_MUTATION = gql`
   mutation PaymentMethod($data: CreatePaymentMethodInput!) {
     createPaymentMethod(data: $data) {
-      id
-      name
-      mediaId
       createdAt
+      details
+      id
+      paymentId
+      status
+      type
+      userId
     }
   }
 `;

@@ -4,10 +4,10 @@ export const AMENITY_LIST_QUERY = gql`
   query Amenity($limit: Int, $page: Int) {
     allAmenity(limit: $limit, page: $page) {
       items {
-        createdAt
         id
-        mediaId
         name
+        mediaId
+        createdAt
       }
       totalCount
     }

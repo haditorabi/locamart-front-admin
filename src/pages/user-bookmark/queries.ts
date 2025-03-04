@@ -6,8 +6,9 @@ export const USERBOOKMARK_LIST_QUERY = gql`
       items {
         createdAt
         id
-        mediaId
-        name
+        targetId
+        targetType
+        userId
       }
       totalCount
     }
@@ -16,40 +17,44 @@ export const USERBOOKMARK_LIST_QUERY = gql`
 export const USERBOOKMARK_SHOW_QUERY = gql`
   query UserBookmark($id: String!) {
     userBookmark(id: $id) {
-      id
-      name
-      mediaId
       createdAt
+      id
+      targetId
+      targetType
+      userId
     }
   }
 `;
 export const USERBOOKMARK_DELETE_QUERY = gql`
   mutation UserBookmark($id: String!) {
     deleteUserBookmark(id: $id) {
-      id
-      name
-      mediaId
       createdAt
+      id
+      targetId
+      targetType
+      userId
     }
   }
 `;
 export const USERBOOKMARK_EDIT_MUTATION = gql`
   mutation UserBookmark($id: String!, $data: UpdateUserBookmarkInput!) {
     updateUserBookmark(id: $id, data: $data) {
-      id
-      name
-      mediaId
       createdAt
+      id
+      targetId
+      targetType
+      userId
     }
   }
 `;
 export const USERBOOKMARK_CREATE_MUTATION = gql`
   mutation UserBookmark($data: CreateUserBookmarkInput!) {
     createUserBookmark(data: $data) {
-      id
-      name
-      mediaId
       createdAt
+      id
+      targetId
+      targetType
+      userId
     }
   }
 `;

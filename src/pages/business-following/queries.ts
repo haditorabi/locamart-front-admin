@@ -4,10 +4,9 @@ export const BUSINESSFOLLOWING_LIST_QUERY = gql`
   query BusinessFollowing($limit: Int, $page: Int) {
     allBusinessFollowing(limit: $limit, page: $page) {
       items {
-        createdAt
+        businessId
         id
-        mediaId
-        name
+        userId
       }
       totalCount
     }
@@ -16,20 +15,18 @@ export const BUSINESSFOLLOWING_LIST_QUERY = gql`
 export const BUSINESSFOLLOWING_SHOW_QUERY = gql`
   query BusinessFollowing($id: String!) {
     businessFollowing(id: $id) {
+      businessId
       id
-      name
-      mediaId
-      createdAt
+      userId
     }
   }
 `;
 export const BUSINESSFOLLOWING_DELETE_QUERY = gql`
   mutation BusinessFollowing($id: String!) {
     deleteBusinessFollowing(id: $id) {
+      businessId
       id
-      name
-      mediaId
-      createdAt
+      userId
     }
   }
 `;
@@ -39,20 +36,18 @@ export const BUSINESSFOLLOWING_EDIT_MUTATION = gql`
     $data: UpdateBusinessFollowingInput!
   ) {
     updateBusinessFollowing(id: $id, data: $data) {
+      businessId
       id
-      name
-      mediaId
-      createdAt
+      userId
     }
   }
 `;
 export const BUSINESSFOLLOWING_CREATE_MUTATION = gql`
   mutation BusinessFollowing($data: CreateBusinessFollowingInput!) {
     createBusinessFollowing(data: $data) {
+      businessId
       id
-      name
-      mediaId
-      createdAt
+      userId
     }
   }
 `;

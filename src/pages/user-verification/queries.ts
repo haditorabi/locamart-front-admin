@@ -6,8 +6,10 @@ export const USERVERIFICATION_LIST_QUERY = gql`
       items {
         createdAt
         id
-        mediaId
-        name
+        status
+        type
+        updatedAt
+        userId
       }
       totalCount
     }
@@ -16,40 +18,48 @@ export const USERVERIFICATION_LIST_QUERY = gql`
 export const USERVERIFICATION_SHOW_QUERY = gql`
   query UserVerification($id: String!) {
     userVerification(id: $id) {
-      id
-      name
-      mediaId
       createdAt
+      id
+      status
+      type
+      updatedAt
+      userId
     }
   }
 `;
 export const USERVERIFICATION_DELETE_QUERY = gql`
   mutation UserVerification($id: String!) {
     deleteUserVerification(id: $id) {
-      id
-      name
-      mediaId
       createdAt
+      id
+      status
+      type
+      updatedAt
+      userId
     }
   }
 `;
 export const USERVERIFICATION_EDIT_MUTATION = gql`
   mutation UserVerification($id: String!, $data: UpdateUserVerificationInput!) {
     updateUserVerification(id: $id, data: $data) {
-      id
-      name
-      mediaId
       createdAt
+      id
+      status
+      type
+      updatedAt
+      userId
     }
   }
 `;
 export const USERVERIFICATION_CREATE_MUTATION = gql`
   mutation UserVerification($data: CreateUserVerificationInput!) {
     createUserVerification(data: $data) {
-      id
-      name
-      mediaId
       createdAt
+      id
+      status
+      type
+      updatedAt
+      userId
     }
   }
 `;
