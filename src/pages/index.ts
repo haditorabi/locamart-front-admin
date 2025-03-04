@@ -20,7 +20,6 @@ export * from "./event";
 export * from "./event-category";
 export * from "./language";
 export * from "./media";
-export * from "./notification";
 export * from "./payment";
 export * from "./payment-method";
 export * from "./product-category";
@@ -40,4 +39,4 @@ export * from "./user-preference";
 export * from "./user-review";
 export * from "./user-score";
 export * from "./user-verification";
-export * from "./user-wallet
+export * from "./user-wallet";

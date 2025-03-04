@@ -27,7 +27,7 @@ import {
 import { ColumnFilter, ColumnSorter } from "../../components/table";
 import { Pagination } from "../../components/pagination";
 
-export const UserBookingList: React.FC = () => {
+export const UserBookmarkList: React.FC = () => {
   const columns = React.useMemo<ColumnDef<any>[]>(
     () => [
       {
