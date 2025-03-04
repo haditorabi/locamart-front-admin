@@ -1,4 +1,4 @@
-import { AMENITY_DELETE_QUERY, AMENITY_LIST_QUERY } from "./queries";
+import { USERBLOCKED_DELETE_QUERY, USERBLOCKED_LIST_QUERY } from "./queries";
 import React from "react";
 import { useTable } from "@refinedev/react-table";
 import { type ColumnDef, flexRender } from "@tanstack/react-table";
@@ -27,7 +27,7 @@ import {
 import { ColumnFilter, ColumnSorter } from "../../components/table";
 import { Pagination } from "../../components/pagination";
 
-export const UeserBlockedList: React.FC = () => {
+export const UserBlockedList: React.FC = () => {
   const columns = React.useMemo<ColumnDef<any>[]>(
     () => [
       {
@@ -63,7 +63,7 @@ export const UeserBlockedList: React.FC = () => {
           return (
             <HStack>
               <ShowButton
-                resource="amenity"
+                resource="UserBlocked"
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
@@ -77,7 +77,7 @@ export const UeserBlockedList: React.FC = () => {
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
-                meta={{ gqlMutation: AMENITY_DELETE_QUERY }}
+                meta={{ gqlMutation: USERBLOCKED_DELETE_QUERY }}
               />
             </HStack>
           );
@@ -107,7 +107,7 @@ export const UeserBlockedList: React.FC = () => {
         },
       ],
       meta: {
-        gqlQuery: AMENITY_LIST_QUERY,
+        gqlQuery: USERBLOCKED_LIST_QUERY,
       },
     },
   });
@@ -120,7 +120,7 @@ export const UeserBlockedList: React.FC = () => {
   }));
 
   return (
-    <List title="Amenity">
+    <List title="UserBlocked">
       <TableContainer>
         <Table variant="simple" whiteSpace="pre-line">
           <Thead>

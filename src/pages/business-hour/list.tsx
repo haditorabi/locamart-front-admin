@@ -1,4 +1,4 @@
-import { AMENITY_DELETE_QUERY, AMENITY_LIST_QUERY } from "./queries";
+import { BUSINESSHOUR_DELETE_QUERY, BUSINESSHOUR_LIST_QUERY } from "./queries";
 import React from "react";
 import { useTable } from "@refinedev/react-table";
 import { type ColumnDef, flexRender } from "@tanstack/react-table";
@@ -63,7 +63,7 @@ export const BusinessHourList: React.FC = () => {
           return (
             <HStack>
               <ShowButton
-                resource="amenity"
+                resource="BusinessHour"
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
@@ -77,7 +77,7 @@ export const BusinessHourList: React.FC = () => {
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
-                meta={{ gqlMutation: AMENITY_DELETE_QUERY }}
+                meta={{ gqlMutation: BUSINESSHOUR_DELETE_QUERY }}
               />
             </HStack>
           );
@@ -107,7 +107,7 @@ export const BusinessHourList: React.FC = () => {
         },
       ],
       meta: {
-        gqlQuery: AMENITY_LIST_QUERY,
+        gqlQuery: BUSINESSHOUR_LIST_QUERY,
       },
     },
   });
@@ -120,7 +120,7 @@ export const BusinessHourList: React.FC = () => {
   }));
 
   return (
-    <List title="Amenity">
+    <List title="BusinessHour">
       <TableContainer>
         <Table variant="simple" whiteSpace="pre-line">
           <Thead>

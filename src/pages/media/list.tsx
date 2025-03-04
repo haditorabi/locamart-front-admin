@@ -1,4 +1,4 @@
-import { AMENITY_DELETE_QUERY, AMENITY_LIST_QUERY } from "./queries";
+import { MEDIA_DELETE_QUERY, MEDIA_LIST_QUERY } from "./queries";
 import React from "react";
 import { useTable } from "@refinedev/react-table";
 import { type ColumnDef, flexRender } from "@tanstack/react-table";
@@ -77,7 +77,7 @@ export const MediaList: React.FC = () => {
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
-                meta={{ gqlMutation: AMENITY_DELETE_QUERY }}
+                meta={{ gqlMutation: MEDIA_DELETE_QUERY }}
               />
             </HStack>
           );
@@ -107,7 +107,7 @@ export const MediaList: React.FC = () => {
         },
       ],
       meta: {
-        gqlQuery: AMENITY_LIST_QUERY,
+        gqlQuery: MEDIA_LIST_QUERY,
       },
     },
   });

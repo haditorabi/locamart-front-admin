@@ -1,4 +1,4 @@
-import { AMENITY_DELETE_QUERY, AMENITY_LIST_QUERY } from "./queries";
+import { EVENT_DELETE_QUERY, EVENT_LIST_QUERY } from "./queries";
 import React from "react";
 import { useTable } from "@refinedev/react-table";
 import { type ColumnDef, flexRender } from "@tanstack/react-table";
@@ -63,7 +63,7 @@ export const EventList: React.FC = () => {
           return (
             <HStack>
               <ShowButton
-                resource="amenity"
+                resource="Event"
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
@@ -77,7 +77,7 @@ export const EventList: React.FC = () => {
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
-                meta={{ gqlMutation: AMENITY_DELETE_QUERY }}
+                meta={{ gqlMutation: EVENT_DELETE_QUERY }}
               />
             </HStack>
           );
@@ -107,7 +107,7 @@ export const EventList: React.FC = () => {
         },
       ],
       meta: {
-        gqlQuery: AMENITY_LIST_QUERY,
+        gqlQuery: EVENT_LIST_QUERY,
       },
     },
   });
@@ -120,7 +120,7 @@ export const EventList: React.FC = () => {
   }));
 
   return (
-    <List title="Amenity">
+    <List title="Event">
       <TableContainer>
         <Table variant="simple" whiteSpace="pre-line">
           <Thead>

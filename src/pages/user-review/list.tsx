@@ -1,4 +1,4 @@
-import { AMENITY_DELETE_QUERY, AMENITY_LIST_QUERY } from "./queries";
+import { USERREVIEW_DELETE_QUERY, USERREVIEW_LIST_QUERY } from "./queries";
 import React from "react";
 import { useTable } from "@refinedev/react-table";
 import { type ColumnDef, flexRender } from "@tanstack/react-table";
@@ -63,7 +63,7 @@ export const UserReviewList: React.FC = () => {
           return (
             <HStack>
               <ShowButton
-                resource="amenity"
+                resource="UserReview"
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
@@ -77,7 +77,7 @@ export const UserReviewList: React.FC = () => {
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
-                meta={{ gqlMutation: AMENITY_DELETE_QUERY }}
+                meta={{ gqlMutation: USERREVIEW_DELETE_QUERY }}
               />
             </HStack>
           );
@@ -107,7 +107,7 @@ export const UserReviewList: React.FC = () => {
         },
       ],
       meta: {
-        gqlQuery: AMENITY_LIST_QUERY,
+        gqlQuery: USERREVIEW_LIST_QUERY,
       },
     },
   });
@@ -120,7 +120,7 @@ export const UserReviewList: React.FC = () => {
   }));
 
   return (
-    <List title="Amenity">
+    <List title="UserReview">
       <TableContainer>
         <Table variant="simple" whiteSpace="pre-line">
           <Thead>

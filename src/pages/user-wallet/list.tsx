@@ -1,4 +1,4 @@
-import { AMENITY_DELETE_QUERY, AMENITY_LIST_QUERY } from "./queries";
+import { USERWALLET_DELETE_QUERY, USERWALLET_LIST_QUERY } from "./queries";
 import React from "react";
 import { useTable } from "@refinedev/react-table";
 import { type ColumnDef, flexRender } from "@tanstack/react-table";
@@ -63,7 +63,7 @@ export const UserWalletList: React.FC = () => {
           return (
             <HStack>
               <ShowButton
-                resource="amenity"
+                resource="UserWallet"
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
@@ -77,7 +77,7 @@ export const UserWalletList: React.FC = () => {
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
-                meta={{ gqlMutation: AMENITY_DELETE_QUERY }}
+                meta={{ gqlMutation: USERWALLET_DELETE_QUERY }}
               />
             </HStack>
           );
@@ -107,7 +107,7 @@ export const UserWalletList: React.FC = () => {
         },
       ],
       meta: {
-        gqlQuery: AMENITY_LIST_QUERY,
+        gqlQuery: USERWALLET_LIST_QUERY,
       },
     },
   });
@@ -120,7 +120,7 @@ export const UserWalletList: React.FC = () => {
   }));
 
   return (
-    <List title="Amenity">
+    <List title="UserWallet">
       <TableContainer>
         <Table variant="simple" whiteSpace="pre-line">
           <Thead>

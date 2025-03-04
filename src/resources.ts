@@ -136,12 +136,12 @@ export const resources = [
     meta: { label: "Currency" },
   },
   {
-    name: "DealRedumption",
-    list: "/DealRedumption",
-    show: "/DealRedumption/show/:id",
-    edit: "/DealRedumption/edit/:id",
-    create: "/DealRedumption/create",
-    meta: { label: "DealRedumption" },
+    name: "DealsRedemption",
+    list: "/DealsRedemption",
+    show: "/DealsRedemption/show/:id",
+    edit: "/DealsRedemption/edit/:id",
+    create: "/DealsRedemption/create",
+    meta: { label: "DealsRedemption" },
   },
   {
     name: "Event",
