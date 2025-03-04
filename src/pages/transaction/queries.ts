@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const TRANSACTION_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query Transaction($limit: Int, $page: Int) {
+    allTransaction(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const TRANSACTION_LIST_QUERY = gql`
   }
 `;
 export const TRANSACTION_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query Transaction($id: String!) {
+    transaction(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const TRANSACTION_SHOW_QUERY = gql`
   }
 `;
 export const TRANSACTION_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation Transaction($id: String!) {
+    deleteTransaction(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const TRANSACTION_DELETE_QUERY = gql`
   }
 `;
 export const TRANSACTION_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation Transaction($id: String!, $data: UpdateTransactionInput!) {
+    updateTransaction(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const TRANSACTION_EDIT_MUTATION = gql`
   }
 `;
 export const TRANSACTION_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation Transaction($data: CreateTransactionInput!) {
+    createTransaction(data: $data) {
       id
       name
       mediaId

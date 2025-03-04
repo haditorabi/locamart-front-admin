@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const USERCHECKIN_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query UserCheckin($limit: Int, $page: Int) {
+    allUserCheckin(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const USERCHECKIN_LIST_QUERY = gql`
   }
 `;
 export const USERCHECKIN_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query UserCheckin($id: String!) {
+    userCheckin(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const USERCHECKIN_SHOW_QUERY = gql`
   }
 `;
 export const USERCHECKIN_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation UserCheckin($id: String!) {
+    deleteUserCheckin(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const USERCHECKIN_DELETE_QUERY = gql`
   }
 `;
 export const USERCHECKIN_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation UserCheckin($id: String!, $data: UpdateUserCheckinInput!) {
+    updateUserCheckin(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const USERCHECKIN_EDIT_MUTATION = gql`
   }
 `;
 export const USERCHECKIN_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation UserCheckin($data: CreateUserCheckinInput!) {
+    createUserCheckin(data: $data) {
       id
       name
       mediaId

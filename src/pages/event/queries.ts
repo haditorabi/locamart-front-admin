@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const EVENT_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query Event($limit: Int, $page: Int) {
+    allEvent(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const EVENT_LIST_QUERY = gql`
   }
 `;
 export const EVENT_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query Event($id: String!) {
+    event(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const EVENT_SHOW_QUERY = gql`
   }
 `;
 export const EVENT_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation Event($id: String!) {
+    deleteEvent(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const EVENT_DELETE_QUERY = gql`
   }
 `;
 export const EVENT_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation Event($id: String!, $data: UpdateEventInput!) {
+    updateEvent(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const EVENT_EDIT_MUTATION = gql`
   }
 `;
 export const EVENT_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation Event($data: CreateEventInput!) {
+    createEvent(data: $data) {
       id
       name
       mediaId

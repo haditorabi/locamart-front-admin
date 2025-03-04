@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const USERACTION_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query UserAction($limit: Int, $page: Int) {
+    allUserAction(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const USERACTION_LIST_QUERY = gql`
   }
 `;
 export const USERACTION_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query UserAction($id: String!) {
+    userAction(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const USERACTION_SHOW_QUERY = gql`
   }
 `;
 export const USERACTION_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation UserAction($id: String!) {
+    deleteUserAction(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const USERACTION_DELETE_QUERY = gql`
   }
 `;
 export const USERACTION_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation UserAction($id: String!, $data: UpdateUserActionInput!) {
+    updateUserAction(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const USERACTION_EDIT_MUTATION = gql`
   }
 `;
 export const USERACTION_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation UserAction($data: CreateUserActionInput!) {
+    createUserAction(data: $data) {
       id
       name
       mediaId

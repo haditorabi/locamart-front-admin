@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const USERSCORE_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query UserScore($limit: Int, $page: Int) {
+    allUserScore(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const USERSCORE_LIST_QUERY = gql`
   }
 `;
 export const USERSCORE_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query UserScore($id: String!) {
+    userScore(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const USERSCORE_SHOW_QUERY = gql`
   }
 `;
 export const USERSCORE_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation UserScore($id: String!) {
+    deleteUserScore(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const USERSCORE_DELETE_QUERY = gql`
   }
 `;
 export const USERSCORE_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation UserScore($id: String!, $data: UpdateUserScoreInput!) {
+    updateUserScore(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const USERSCORE_EDIT_MUTATION = gql`
   }
 `;
 export const USERSCORE_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation UserScore($data: CreateUserScoreInput!) {
+    createUserScore(data: $data) {
       id
       name
       mediaId

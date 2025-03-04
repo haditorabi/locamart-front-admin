@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const USERWALLET_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query UserWallet($limit: Int, $page: Int) {
+    allUserWallet(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const USERWALLET_LIST_QUERY = gql`
   }
 `;
 export const USERWALLET_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query UserWallet($id: String!) {
+    userWallet(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const USERWALLET_SHOW_QUERY = gql`
   }
 `;
 export const USERWALLET_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation UserWallet($id: String!) {
+    deleteUserWallet(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const USERWALLET_DELETE_QUERY = gql`
   }
 `;
 export const USERWALLET_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation UserWallet($id: String!, $data: UpdateUserWalletInput!) {
+    updateUserWallet(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const USERWALLET_EDIT_MUTATION = gql`
   }
 `;
 export const USERWALLET_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation UserWallet($data: CreateUserWalletInput!) {
+    createUserWallet(data: $data) {
       id
       name
       mediaId

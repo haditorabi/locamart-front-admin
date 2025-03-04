@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const CITY_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query City($limit: Int, $page: Int) {
+    allCity(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const CITY_LIST_QUERY = gql`
   }
 `;
 export const CITY_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query City($id: String!) {
+    city(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const CITY_SHOW_QUERY = gql`
   }
 `;
 export const CITY_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation City($id: String!) {
+    deleteCity(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const CITY_DELETE_QUERY = gql`
   }
 `;
 export const CITY_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation City($id: String!, $data: UpdateCityInput!) {
+    updateCity(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const CITY_EDIT_MUTATION = gql`
   }
 `;
 export const CITY_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation City($data: CreateCityInput!) {
+    createCity(data: $data) {
       id
       name
       mediaId

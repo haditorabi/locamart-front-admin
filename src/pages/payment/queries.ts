@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const PAYMENT_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query Payment($limit: Int, $page: Int) {
+    allPayment(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const PAYMENT_LIST_QUERY = gql`
   }
 `;
 export const PAYMENT_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query Payment($id: String!) {
+    payment(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const PAYMENT_SHOW_QUERY = gql`
   }
 `;
 export const PAYMENT_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation Payment($id: String!) {
+    deletePayment(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const PAYMENT_DELETE_QUERY = gql`
   }
 `;
 export const PAYMENT_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation Payment($id: String!, $data: UpdatePaymentInput!) {
+    updatePayment(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const PAYMENT_EDIT_MUTATION = gql`
   }
 `;
 export const PAYMENT_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation Payment($data: CreatePaymentInput!) {
+    createPayment(data: $data) {
       id
       name
       mediaId

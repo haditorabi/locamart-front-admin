@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const PROVINCE_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query Province($limit: Int, $page: Int) {
+    allProvince(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const PROVINCE_LIST_QUERY = gql`
   }
 `;
 export const PROVINCE_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query Province($id: String!) {
+    province(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const PROVINCE_SHOW_QUERY = gql`
   }
 `;
 export const PROVINCE_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation Province($id: String!) {
+    deleteProvince(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const PROVINCE_DELETE_QUERY = gql`
   }
 `;
 export const PROVINCE_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation Province($id: String!, $data: UpdateProvinceInput!) {
+    updateProvince(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const PROVINCE_EDIT_MUTATION = gql`
   }
 `;
 export const PROVINCE_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation Province($data: CreateProvinceInput!) {
+    createProvince(data: $data) {
       id
       name
       mediaId

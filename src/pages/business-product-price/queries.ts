@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const BUSINESSPRODUCTPRICE_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query BusinessProductPrice($limit: Int, $page: Int) {
+    allBusinessProductPrice(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const BUSINESSPRODUCTPRICE_LIST_QUERY = gql`
   }
 `;
 export const BUSINESSPRODUCTPRICE_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query BusinessProductPrice($id: String!) {
+    businessProductPrice(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const BUSINESSPRODUCTPRICE_SHOW_QUERY = gql`
   }
 `;
 export const BUSINESSPRODUCTPRICE_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation BusinessProductPrice($id: String!) {
+    deleteBusinessProductPrice(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,11 @@ export const BUSINESSPRODUCTPRICE_DELETE_QUERY = gql`
   }
 `;
 export const BUSINESSPRODUCTPRICE_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation BusinessProductPrice(
+    $id: String!
+    $data: UpdateBusinessProductPriceInput!
+  ) {
+    updateBusinessProductPrice(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +47,8 @@ export const BUSINESSPRODUCTPRICE_EDIT_MUTATION = gql`
   }
 `;
 export const BUSINESSPRODUCTPRICE_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation BusinessProductPrice($data: CreateBusinessProductPriceInput!) {
+    createBusinessProductPrice(data: $data) {
       id
       name
       mediaId

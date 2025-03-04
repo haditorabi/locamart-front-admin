@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const USERBOOKMARK_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query UserBookmark($limit: Int, $page: Int) {
+    allUserBookmark(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const USERBOOKMARK_LIST_QUERY = gql`
   }
 `;
 export const USERBOOKMARK_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query UserBookmark($id: String!) {
+    userBookmark(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const USERBOOKMARK_SHOW_QUERY = gql`
   }
 `;
 export const USERBOOKMARK_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation UserBookmark($id: String!) {
+    deleteUserBookmark(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const USERBOOKMARK_DELETE_QUERY = gql`
   }
 `;
 export const USERBOOKMARK_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation UserBookmark($id: String!, $data: UpdateUserBookmarkInput!) {
+    updateUserBookmark(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const USERBOOKMARK_EDIT_MUTATION = gql`
   }
 `;
 export const USERBOOKMARK_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation UserBookmark($data: CreateUserBookmarkInput!) {
+    createUserBookmark(data: $data) {
       id
       name
       mediaId

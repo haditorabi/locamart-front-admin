@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const USERREVIEW_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query UserReview($limit: Int, $page: Int) {
+    allUserReview(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const USERREVIEW_LIST_QUERY = gql`
   }
 `;
 export const USERREVIEW_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query UserReview($id: String!) {
+    userReview(id: $id) 
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const USERREVIEW_SHOW_QUERY = gql`
   }
 `;
 export const USERREVIEW_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation UserReview($id: String!) {
+    deleteUserReview(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const USERREVIEW_DELETE_QUERY = gql`
   }
 `;
 export const USERREVIEW_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation UserReview($id: String!, $data: UpdateUserReviewInput!) {
+    updateUserReview(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const USERREVIEW_EDIT_MUTATION = gql`
   }
 `;
 export const USERREVIEW_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation UserReview($data: CreateUserReviewInput!) {
+    createUserReview(data: $data) {
       id
       name
       mediaId

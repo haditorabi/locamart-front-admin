@@ -1,8 +1,8 @@
 import gql from "graphql-tag";
 
 export const BUSINESSHOUR_LIST_QUERY = gql`
-  query Amenity($limit: Int, $page: Int) {
-    allAmenity(limit: $limit, page: $page) {
+  query BusinessHour($limit: Int, $page: Int) {
+    allBusinessHour(limit: $limit, page: $page) {
       items {
         createdAt
         id
@@ -14,8 +14,8 @@ export const BUSINESSHOUR_LIST_QUERY = gql`
   }
 `;
 export const BUSINESSHOUR_SHOW_QUERY = gql`
-  query Amenity($id: String!) {
-    amenity(id: $id) {
+  query BusinessHour($id: String!) {
+    businessHour(id: $id) {
       id
       name
       mediaId
@@ -24,8 +24,8 @@ export const BUSINESSHOUR_SHOW_QUERY = gql`
   }
 `;
 export const BUSINESSHOUR_DELETE_QUERY = gql`
-  mutation Amenity($id: String!) {
-    deleteAmenity(id: $id) {
+  mutation BusinessHour($id: String!) {
+    deleteBusinessHour(id: $id) {
       id
       name
       mediaId
@@ -34,8 +34,8 @@ export const BUSINESSHOUR_DELETE_QUERY = gql`
   }
 `;
 export const BUSINESSHOUR_EDIT_MUTATION = gql`
-  mutation Amenity($id: String!, $data: UpdateAmenityInput!) {
-    updateAmenity(id: $id, data: $data) {
+  mutation BusinessHour($id: String!, $data: UpdateBusinessHourInput!) {
+    updateBusinessHour(id: $id, data: $data) {
       id
       name
       mediaId
@@ -44,8 +44,8 @@ export const BUSINESSHOUR_EDIT_MUTATION = gql`
   }
 `;
 export const BUSINESSHOUR_CREATE_MUTATION = gql`
-  mutation Amenity($data: CreateAmenityInput!) {
-    createAmenity(data: $data) {
+  mutation BusinessHour($data: CreateBusinessHourInput!) {
+    createBusinessHour(data: $data) {
       id
       name
       mediaId
