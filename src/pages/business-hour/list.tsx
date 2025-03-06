@@ -37,21 +37,29 @@ export const BusinessHourList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "businessId",
+        header: "businessId",
+        accessorKey: "businessId",
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
-        cell: function render({ getValue }) {
-          return <DateField value={getValue() as string} format="LLL" />;
-        },
-        enableColumnFilter: false,
+        id: "dayOfWeek",
+        header: "dayOfWeek",
+        accessorKey: "dayOfWeek",
+      },
+      {
+        id: "openTime",
+        header: "openTime",
+        accessorKey: "openTime",
+      },
+      {
+        id: "closeTime",
+        header: "closeTime",
+        accessorKey: "closeTime",
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
       },
       {
         id: "actions",

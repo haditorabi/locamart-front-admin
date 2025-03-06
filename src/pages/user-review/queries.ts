@@ -21,17 +21,18 @@ export const USERREVIEW_LIST_QUERY = gql`
 `;
 export const USERREVIEW_SHOW_QUERY = gql`
   query UserReview($id: String!) {
-    userReview(id: $id) 
-            content
-            createdAt
-            id
-            mediaId
-            rating
-            status
-            targetId
-            targetType
-            updatedAt
-            userId
+    userReview(id: $id)
+    items {
+      content
+      createdAt
+      id
+      mediaId
+      rating
+      status
+      targetId
+      targetType
+      updatedAt
+      userId
     }
   }
 `;

@@ -45,6 +45,52 @@ export const BusinessDealList: React.FC = () => {
         },
       },
       {
+        id: "businessId",
+        header: "businessId",
+        accessorKey: "businessId",
+      },
+      {
+        id: "discountType",
+        header: "discountType",
+        accessorKey: "discountType",
+      },
+      {
+        id: "value",
+        header: "value",
+        accessorKey: "value",
+      },
+      {
+        id: "maxRedemption",
+        header: "maxRedemption",
+        accessorKey: "maxRedemption",
+      },
+      {
+        id: "maxPerUser",
+        header: "maxPerUser",
+        accessorKey: "maxPerUser",
+      },
+      {
+        id: "startDate",
+        header: "startDate",
+        accessorKey: "startDate",
+        cell: function render({ getValue }) {
+          return <DateField value={getValue() as string} format="LLL" />;
+        },
+      },
+      {
+        id: "endDate",
+        header: "endDate",
+        accessorKey: "endDate",
+        cell: function render({ getValue }) {
+          return <DateField value={getValue() as string} format="LLL" />;
+        },
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
+      },
+      {
         id: "createdAt",
         header: "Created At",
         accessorKey: "createdAt",

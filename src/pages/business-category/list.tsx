@@ -48,6 +48,11 @@ export const BusinessCategoryList: React.FC = () => {
         },
       },
       {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
+      },
+      {
         id: "createdAt",
         header: "Created At",
         accessorKey: "createdAt",

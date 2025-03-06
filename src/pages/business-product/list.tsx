@@ -40,12 +40,24 @@ export const BusinessProductList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
+        id: "businessId",
+        header: "businessId",
+        accessorKey: "businessId",
+      },
+      {
         id: "name",
-        header: "Name",
+        header: "name",
         accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+      },
+      {
+        id: "productCategroyId",
+        header: "productCategroyId",
+        accessorKey: "productCategroyId",
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
       },
       {
         id: "createdAt",

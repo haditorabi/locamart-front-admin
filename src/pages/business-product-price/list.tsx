@@ -12,6 +12,7 @@ import {
   EditButton,
   DeleteButton,
   DateField,
+  NumberField,
 } from "@refinedev/chakra-ui";
 
 import {
@@ -40,11 +41,26 @@ export const BusinessProductPriceList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
+        id: "businessProductId",
+        header: "businessProductId",
+        accessorKey: "businessProductId",
+      },
+      {
+        id: "currencyId",
+        header: "currencyId",
+        accessorKey: "currencyId",
+      },
+      {
+        id: "price",
+        header: "price",
+        accessorKey: "price",
+        cell: function render({ getValue }) {
+          return (
+            <NumberField
+              value={getValue() as string}
+              options={{ currencySign: "standard" }}
+            />
+          );
         },
       },
       {

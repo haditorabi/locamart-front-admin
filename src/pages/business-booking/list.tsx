@@ -40,13 +40,33 @@ export const BusinessBookingList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "businessId",
+        header: "businessId",
+        accessorKey: "businessId",
       },
+      {
+        id: "maxAvailable",
+        header: "maxAvailable",
+        accessorKey: "maxAvailable",
+      },
+      {
+        id: "maxGuest",
+        header: "maxGuest",
+        accessorKey: "maxGuest",
+      },
+      {
+        id: "status",
+        header: "Status",
+        accessorKey: "status",
+      },
+      // {
+      //   id: "name",
+      //   header: "Name",
+      //   accessorKey: "name",
+      //   meta: {
+      //     filterOperator: "contains",
+      //   },
+      // },
       {
         id: "createdAt",
         header: "Created At",

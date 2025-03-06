@@ -40,21 +40,14 @@ export const BusinessFollowingList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "businessId",
+        header: "businessId",
+        accessorKey: "businessId",
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
-        cell: function render({ getValue }) {
-          return <DateField value={getValue() as string} format="LLL" />;
-        },
-        enableColumnFilter: false,
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
       },
       {
         id: "actions",

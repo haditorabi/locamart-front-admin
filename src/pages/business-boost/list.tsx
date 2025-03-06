@@ -40,11 +40,37 @@ export const BusinessBoostList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
+        id: "businessId",
+        header: "businessId",
+        accessorKey: "businessId",
+      },
+      {
+        id: "type",
+        header: "type",
+        accessorKey: "type",
+      },
+      {
+        id: "startAt",
+        header: "startAt",
+        accessorKey: "startAt",
+        cell: function render({ getValue }) {
+          return <DateField value={getValue() as string} format="LLL" />;
+        },
+      },
+      {
+        id: "endAt",
+        header: "endAt",
+        accessorKey: "endAt",
+        cell: function render({ getValue }) {
+          return <DateField value={getValue() as string} format="LLL" />;
+        },
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
+        cell: function render({ getValue }) {
+          return <DateField value={getValue() as string} format="LLL" />;
         },
       },
       {

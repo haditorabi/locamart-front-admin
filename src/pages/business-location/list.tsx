@@ -40,12 +40,44 @@ export const BusinessLocationList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "address",
+        header: "address",
+        accessorKey: "address",
+      },
+      {
+        id: "latitude",
+        header: "latitude",
+        accessorKey: "latitude",
+      },
+      {
+        id: "longitude",
+        header: "longitude",
+        accessorKey: "longitude",
+      },
+      {
+        id: "provinceId",
+        header: "provinceId",
+        accessorKey: "provinceId",
+      },
+      {
+        id: "cityId",
+        header: "cityId",
+        accessorKey: "cityId",
+      },
+      {
+        id: "zipCode",
+        header: "zipCode",
+        accessorKey: "zipCode",
+      },
+      {
+        id: "phone",
+        header: "phone",
+        accessorKey: "phone",
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
       },
       {
         id: "createdAt",

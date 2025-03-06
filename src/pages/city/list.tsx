@@ -45,13 +45,19 @@ export const CityList: React.FC = () => {
         },
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
-        cell: function render({ getValue }) {
-          return <DateField value={getValue() as string} format="LLL" />;
-        },
-        enableColumnFilter: false,
+        id: "provinceId",
+        header: "provinceId",
+        accessorKey: "provinceId",
+      },
+      {
+        id: "regionId",
+        header: "regionId",
+        accessorKey: "regionId",
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
       },
       {
         id: "actions",
