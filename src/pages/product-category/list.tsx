@@ -48,6 +48,14 @@ export const ProductCategoryList: React.FC = () => {
         },
       },
       {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
         id: "createdAt",
         header: "Created At",
         accessorKey: "createdAt",

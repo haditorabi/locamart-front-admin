@@ -40,21 +40,35 @@ export const DealsRedemptionList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "businessDealId",
+        header: "businessDealId",
+        accessorKey: "businessDealId",
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
+      },
+      {
+        id: "redeemedAt",
+        header: "redeemedAt",
+        accessorKey: "redeemedAt",
         cell: function render({ getValue }) {
           return <DateField value={getValue() as string} format="LLL" />;
         },
-        enableColumnFilter: false,
+      },
+      {
+        id: "expiresAt",
+        header: "expiresAt",
+        accessorKey: "expiresAt",
+        cell: function render({ getValue }) {
+          return <DateField value={getValue() as string} format="LLL" />;
+        },
       },
       {
         id: "actions",

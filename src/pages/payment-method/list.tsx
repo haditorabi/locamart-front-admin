@@ -40,12 +40,24 @@ export const PaymentMethodList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+      },
+      {
+        id: "paymentId",
+        header: "paymentId",
+        accessorKey: "paymentId",
+      },
+      {
+        id: "type",
+        header: "type",
+        accessorKey: "type",
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
       },
       {
         id: "createdAt",

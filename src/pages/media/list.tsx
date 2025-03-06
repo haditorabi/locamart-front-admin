@@ -37,12 +37,19 @@ export const MediaList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "url",
+        header: "url",
+        accessorKey: "url",
+      },
+      {
+        id: "type",
+        header: "type",
+        accessorKey: "type",
+      },
+      {
+        id: "moduleType",
+        header: "moduleType",
+        accessorKey: "moduleType",
       },
       {
         id: "createdAt",

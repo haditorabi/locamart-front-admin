@@ -37,12 +37,44 @@ export const PaymentList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "transactionId",
+        header: "transactionId",
+        accessorKey: "transactionId",
+      },
+      {
+        id: "targetId",
+        header: "targetId",
+        accessorKey: "targetId",
+      },
+      {
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+      },
+      {
+        id: "businessId",
+        header: "businessId",
+        accessorKey: "businessId",
+      },
+      {
+        id: "paymentMethodId",
+        header: "paymentMethodId",
+        accessorKey: "paymentMethodId",
+      },
+      {
+        id: "amount",
+        header: "amount",
+        accessorKey: "amount",
+      },
+      {
+        id: "currencyId",
+        header: "currencyId",
+        accessorKey: "currencyId",
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
       },
       {
         id: "createdAt",
@@ -63,7 +95,7 @@ export const PaymentList: React.FC = () => {
           return (
             <HStack>
               <ShowButton
-                resource="amenity"
+                resource="Payment"
                 hideText
                 size="sm"
                 recordItemId={getValue() as string}
@@ -120,7 +152,7 @@ export const PaymentList: React.FC = () => {
   }));
 
   return (
-    <List title="Amenity">
+    <List title="Payment">
       <TableContainer>
         <Table variant="simple" whiteSpace="pre-line">
           <Thead>

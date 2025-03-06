@@ -45,13 +45,36 @@ export const EventList: React.FC = () => {
         },
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
+        id: "categoryId",
+        header: "categoryId",
+        accessorKey: "categoryId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "startDate",
+        header: "startDate",
+        accessorKey: "startDate",
         cell: function render({ getValue }) {
           return <DateField value={getValue() as string} format="LLL" />;
         },
-        enableColumnFilter: false,
+      },
+      {
+        id: "endDate",
+        header: "endDate",
+        accessorKey: "endDate",
+        cell: function render({ getValue }) {
+          return <DateField value={getValue() as string} format="LLL" />;
+        },
       },
       {
         id: "actions",

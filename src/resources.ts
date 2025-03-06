@@ -192,12 +192,12 @@ export const resources = [
     meta: { label: "PaymentMethod" },
   },
   {
-    name: "PaymentCategory",
-    list: "/PaymentCategory",
-    show: "/PaymentCategory/show/:id",
-    edit: "/PaymentCategory/edit/:id",
-    create: "/PaymentCategory/create",
-    meta: { label: "PaymentCategory" },
+    name: "ProductCategory",
+    list: "/ProductCategory",
+    show: "/ProductCategory/show/:id",
+    edit: "/ProductCategory/edit/:id",
+    create: "/ProductCategory/create",
+    meta: { label: "ProductCategory" },
   },
   {
     name: "Province",

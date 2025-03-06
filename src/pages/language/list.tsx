@@ -45,13 +45,14 @@ export const LanguageList: React.FC = () => {
         },
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
-        cell: function render({ getValue }) {
-          return <DateField value={getValue() as string} format="LLL" />;
-        },
-        enableColumnFilter: false,
+        id: "code",
+        header: "code",
+        accessorKey: "code",
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
       },
       {
         id: "actions",

@@ -45,13 +45,12 @@ export const CurrencyList: React.FC = () => {
         },
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
-        cell: function render({ getValue }) {
-          return <DateField value={getValue() as string} format="LLL" />;
+        id: "code",
+        header: "code",
+        accessorKey: "code",
+        meta: {
+          filterOperator: "contains",
         },
-        enableColumnFilter: false,
       },
       {
         id: "actions",

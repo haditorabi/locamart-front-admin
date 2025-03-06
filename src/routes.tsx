@@ -174,7 +174,7 @@ export const AppRoutes = (
         <Route path="edit/:id" element={<Page.PaymentMethodEdit />} />
         <Route path="create" element={<Page.PaymentMethodCreate />} /> */}
       </Route>
-      <Route path="/ProductCategroy">
+      <Route path="/ProductCategory">
         <Route index element={<Page.ProductCategoryList />} />
         {/* <Route path="show/:id" element={<Page.ProductCategoryShow />} />
         <Route path="edit/:id" element={<Page.ProductCategoryEdit />} />
