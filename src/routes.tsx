@@ -198,11 +198,23 @@ export const AppRoutes = (
         <Route path="edit/:id" element={<Page.ReportEdit />} />
         <Route path="create" element={<Page.ReportCreate />} /> */}
       </Route>
+      <Route path="/Transaction">
+        <Route index element={<Page.TransactionList />} />
+        {/* <Route path="show/:id" element={<Page.TransactionShow />} />
+        <Route path="edit/:id" element={<Page.TransactionEdit />} />
+        <Route path="create" element={<Page.TransactionCreate />} /> */}
+      </Route>
       <Route path="/UserAction">
         <Route index element={<Page.UserActionList />} />
         {/* <Route path="show/:id" element={<Page.UserActionShow />} />
         <Route path="edit/:id" element={<Page.UserActionEdit />} />
         <Route path="create" element={<Page.UserActionCreate />} /> */}
+      </Route>
+      <Route path="/User">
+        <Route index element={<Page.UserList />} />
+        {/* <Route path="show/:id" element={<Page.UserShow />} />
+        <Route path="edit/:id" element={<Page.UserEdit />} />
+        <Route path="create" element={<Page.UserCreate />} /> */}
       </Route>
       <Route path="/UserActionLog">
         <Route index element={<Page.UserActionLogList />} />
@@ -240,11 +252,11 @@ export const AppRoutes = (
         <Route path="edit/:id" element={<Page.UserFollowingEdit />} />
         <Route path="create" element={<Page.UserFollowingCreate />} /> */}
       </Route>
-      <Route path="/UserPrefrence">
-        <Route index element={<Page.UserPrefrenceList />} />
-        {/* <Route path="show/:id" element={<Page.UserPrefrenceShow />} />
-        <Route path="edit/:id" element={<Page.UserPrefrenceEdit />} />
-        <Route path="create" element={<Page.UserPrefrenceCreate />} /> */}
+      <Route path="/UserPreference">
+        <Route index element={<Page.UserPreferenceList />} />
+        {/* <Route path="show/:id" element={<Page.UserPreferenceShow />} />
+        <Route path="edit/:id" element={<Page.UserPreferenceEdit />} />
+        <Route path="create" element={<Page.UserPreferenceCreate />} /> */}
       </Route>
       <Route path="/UserReview">
         <Route index element={<Page.UserReviewList />} />

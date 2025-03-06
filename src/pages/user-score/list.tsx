@@ -9,6 +9,7 @@ import {
   EditButton,
   DeleteButton,
   DateField,
+  NumberField,
 } from "@refinedev/chakra-ui";
 
 import {
@@ -37,11 +38,22 @@ export const UserScoreList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
         meta: {
           filterOperator: "contains",
+        },
+      },
+      {
+        id: "score",
+        header: "score",
+        accessorKey: "score",
+        meta: {
+          filterOperator: "contains",
+        },
+        cell: function render({ getValue }) {
+          return <NumberField value={getValue() as string} />;
         },
       },
       {

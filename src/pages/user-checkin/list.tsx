@@ -37,9 +37,17 @@ export const UserCheckinList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "businessId",
+        header: "businessId",
+        accessorKey: "businessId",
         meta: {
           filterOperator: "contains",
         },

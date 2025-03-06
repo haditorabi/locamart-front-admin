@@ -37,9 +37,41 @@ export const UserReviewList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "targetId",
+        header: "targetId",
+        accessorKey: "targetId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "targetType",
+        header: "targetType",
+        accessorKey: "targetType",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "rating",
+        header: "rating",
+        accessorKey: "rating",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
         meta: {
           filterOperator: "contains",
         },

@@ -37,9 +37,17 @@ export const UserBlockedList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "blockedId",
+        header: "blockedId",
+        accessorKey: "blockedId",
         meta: {
           filterOperator: "contains",
         },

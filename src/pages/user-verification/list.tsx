@@ -40,9 +40,25 @@ export const UserVerificationList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "type",
+        header: "type",
+        accessorKey: "type",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
         meta: {
           filterOperator: "contains",
         },

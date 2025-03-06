@@ -37,12 +37,34 @@ export const TransactionList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "paymentId",
+        header: "paymentId",
+        accessorKey: "paymentId",
+      },
+      {
+        id: "businessId",
+        header: "businessId",
+        accessorKey: "businessId",
+      },
+      {
+        id: "currencyId",
+        header: "currencyId",
+        accessorKey: "currencyId",
+      },
+      {
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+      },
+      {
+        id: "amount",
+        header: "amount",
+        accessorKey: "amount",
+      },
+      {
+        id: "status",
+        header: "status",
+        accessorKey: "status",
       },
       {
         id: "createdAt",

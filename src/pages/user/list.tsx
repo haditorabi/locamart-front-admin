@@ -45,6 +45,30 @@ export const UserList: React.FC = () => {
         },
       },
       {
+        id: "firstName",
+        header: "firstName",
+        accessorKey: "firstName",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "lastName",
+        header: "lastName",
+        accessorKey: "lastName",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "email",
+        header: "email",
+        accessorKey: "email",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
         id: "createdAt",
         header: "Created At",
         accessorKey: "createdAt",

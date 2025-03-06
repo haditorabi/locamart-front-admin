@@ -37,16 +37,32 @@ export const UserWalletList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "balance",
+        header: "balance",
+        accessorKey: "balance",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "currencyId",
+        header: "currencyId",
+        accessorKey: "currencyId",
         meta: {
           filterOperator: "contains",
         },
       },
       {
         id: "createdAt",
-        header: "Created At",
+        header: "CreatedAt",
         accessorKey: "createdAt",
         cell: function render({ getValue }) {
           return <DateField value={getValue() as string} format="LLL" />;

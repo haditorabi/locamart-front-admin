@@ -37,9 +37,25 @@ export const UserBookmarkList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "targetId",
+        header: "targetId",
+        accessorKey: "targetId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "targetType",
+        header: "targetType",
+        accessorKey: "targetType",
         meta: {
           filterOperator: "contains",
         },

@@ -38,20 +38,13 @@ export const ProvinceList: React.FC = () => {
       },
       {
         id: "name",
-        header: "Name",
+        header: "name",
         accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
-        cell: function render({ getValue }) {
-          return <DateField value={getValue() as string} format="LLL" />;
-        },
-        enableColumnFilter: false,
+        id: "status",
+        header: "status",
+        accessorKey: "status",
       },
       {
         id: "actions",

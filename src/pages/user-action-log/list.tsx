@@ -40,9 +40,57 @@ export const UserActionLogList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "action",
+        header: "action",
+        accessorKey: "action",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "targetId",
+        header: "targetId",
+        accessorKey: "targetId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "targetType",
+        header: "targetType",
+        accessorKey: "targetType",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "ipAddress",
+        header: "ipAddress",
+        accessorKey: "ipAddress",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "device",
+        header: "device",
+        accessorKey: "device",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "os",
+        header: "os",
+        accessorKey: "os",
         meta: {
           filterOperator: "contains",
         },

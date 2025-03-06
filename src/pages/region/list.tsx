@@ -45,15 +45,6 @@ export const RegionList: React.FC = () => {
         },
       },
       {
-        id: "createdAt",
-        header: "Created At",
-        accessorKey: "createdAt",
-        cell: function render({ getValue }) {
-          return <DateField value={getValue() as string} format="LLL" />;
-        },
-        enableColumnFilter: false,
-      },
-      {
         id: "actions",
         header: "Actions",
         accessorKey: "id",

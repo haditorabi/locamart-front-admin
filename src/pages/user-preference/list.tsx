@@ -30,7 +30,7 @@ import {
 import { ColumnFilter, ColumnSorter } from "../../components/table";
 import { Pagination } from "../../components/pagination";
 
-export const UserPrefrenceList: React.FC = () => {
+export const UserPreferenceList: React.FC = () => {
   const columns = React.useMemo<ColumnDef<any>[]>(
     () => [
       {
@@ -40,9 +40,25 @@ export const UserPrefrenceList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "userId",
+        header: "userId",
+        accessorKey: "userId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "key",
+        header: "key",
+        accessorKey: "key",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "value",
+        header: "value",
+        accessorKey: "value",
         meta: {
           filterOperator: "contains",
         },

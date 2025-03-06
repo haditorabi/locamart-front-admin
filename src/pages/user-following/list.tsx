@@ -40,9 +40,17 @@ export const UserFollowingList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
+        id: "followerId",
+        header: "followerId",
+        accessorKey: "followerId",
+        meta: {
+          filterOperator: "contains",
+        },
+      },
+      {
+        id: "followeeId",
+        header: "followeeId",
+        accessorKey: "followeeId",
         meta: {
           filterOperator: "contains",
         },

@@ -37,12 +37,19 @@ export const ReportList: React.FC = () => {
         enableColumnFilter: false,
       },
       {
-        id: "name",
-        header: "Name",
-        accessorKey: "name",
-        meta: {
-          filterOperator: "contains",
-        },
+        id: "byId",
+        header: "byId",
+        accessorKey: "byId",
+      },
+      {
+        id: "targetId",
+        header: "targetId",
+        accessorKey: "targetId",
+      },
+      {
+        id: "targetType",
+        header: "targetType",
+        accessorKey: "targetType",
       },
       {
         id: "createdAt",
